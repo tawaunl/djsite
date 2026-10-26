@@ -1,0 +1,13 @@
+# Netlify reads this on every push to main: build with the stdlib-only
+# script and publish dist/. Netlify serves dist/404.html for missing pages.
+[build]
+  command = "python3 build.py"
+  publish = "dist"
+
+[build.environment]
+  PYTHON_VERSION = "3.12"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
