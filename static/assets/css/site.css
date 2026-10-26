@@ -49,7 +49,8 @@ p { margin: 0 0 1em; }
 .site-header::after { content: ""; position: absolute; inset: auto 0 -1px; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
 .site-header { position: sticky; top: 0; z-index: 50; background: rgb(11 11 13 / .85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
-.brand { font-family: var(--display); font-size: 1.5rem; text-transform: uppercase; text-decoration: none; margin: 0; }
+.brand img { width: 36px; height: 36px; border-radius: 50%; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-size: 1.5rem; text-transform: uppercase; text-decoration: none; margin: 0; }
 .nav { display: flex; align-items: center; gap: 24px; }
 .nav a:not(.btn) { text-decoration: none; color: var(--muted); font-weight: 500; }
 .nav a:not(.btn):hover { color: var(--text); }
@@ -63,11 +64,17 @@ p { margin: 0 0 1em; }
 }
 
 /* hero */
-.hero { position: relative; isolation: isolate; overflow: hidden; min-height: min(88vh, 760px); display: flex; align-items: flex-end; padding: 120px 0 72px; }
-/* the photo is an <img> (not a CSS url) so its path resolves against the page, not the stylesheet */
-.hero-bg { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
-.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgb(11 11 13 / .2), var(--bg) 92%), radial-gradient(60% 70% at 85% 20%, rgb(47 107 255 / .35), transparent 70%), radial-gradient(50% 60% at 10% 30%, rgb(255 45 61 / .3), transparent 70%); }
-.hero h1 { font-size: clamp(4rem, 15vw, 10rem); line-height: .9; margin-bottom: .2em; }
+/* the banner art sits on pure black, so the hero matches it edge to edge */
+.hero { background: #000; padding: 96px 0 80px; text-align: center; }
+.hero .lede { margin-inline: auto; }
+.hero .actions { justify-content: center; }
+.hero h1 { margin: 8px 0 24px; }
+.hero h1 img { width: 100%; height: auto; }
+/* on phones, let the waveform run past the edges so the logo stays big */
+@media (max-width: 600px) {
+  .hero { overflow: hidden; }
+  .hero h1 img { width: 190%; max-width: none; margin-left: -45%; }
+}
 
 /* sections */
 .section { padding: 88px 0; }
@@ -149,6 +156,13 @@ input:focus, select:focus, textarea:focus { border-color: var(--accent-2); outli
 .photo figcaption { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
 .checklist { padding-left: 1.2em; }
 .checklist li { margin-bottom: 8px; }
+
+.logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.logo-card { margin: 0; background: var(--surface); border-radius: var(--radius); padding: 12px; }
+.logo-card img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #000; border-radius: 10px; }
+.logo-wide { grid-column: 1 / -1; }
+.logo-wide img { aspect-ratio: auto; }
+.logo-card figcaption { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 10px; }
 
 /* footer */
 .site-footer { border-top: 1px solid var(--line); padding: 40px 0; }

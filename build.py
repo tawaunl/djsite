@@ -42,7 +42,8 @@ def head(c: dict, title: str, description: str, base: str, canonical: str) -> st
 <title>{e(title)}</title>
 <meta name="description" content="{e(description)}">
 <link rel="canonical" href="{e(canonical)}">
-<link rel="icon" href="{base}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{base}assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="{base}assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
@@ -51,7 +52,7 @@ def head(c: dict, title: str, description: str, base: str, canonical: str) -> st
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(description)}">
 <meta property="og:url" content="{e(canonical)}">
-<meta property="og:image" content="{e(site['url'].rstrip('/') + '/' + site['hero_image'])}">
+<meta property="og:image" content="{e(site['url'].rstrip('/') + '/' + site['og_image'])}">
 <meta name="twitter:card" content="summary_large_image">
 </head>"""
 
@@ -60,7 +61,7 @@ def header(c: dict, base: str) -> str:
     return f"""<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{base}">{e(c['site']['logo_text'])}</a>
+    <a class="brand" href="{base}"><img src="{base}{e(c['site']['logo_mark'])}" alt="" width="36" height="36">{e(c['site']['logo_text'])}</a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="{base}#about">About</a>
@@ -223,10 +224,9 @@ def home(c: dict) -> str:
 <main id="main">
 
 <section class="hero">
-  <img class="hero-bg" src="{e(site['hero_image'])}" alt="" fetchpriority="high">
   <div class="wrap">
     <p class="eyebrow">{e(site['location'])}</p>
-    <h1>{e(site['name'])}</h1>
+    <h1><img src="{e(site['banner'])}" alt="{e(site['name'])}" width="2000" height="419" fetchpriority="high"></h1>
     <p class="lede">{e(site['tagline'])}</p>
     <div class="actions">
       <a class="btn btn-primary" href="#book">Book a date</a>
@@ -287,6 +287,12 @@ def press(c: dict) -> str:
         f'<a class="btn btn-sm" href="../{e(p["src"])}" download>Download</a></figcaption></figure>'
         for p in c["press_photos"]
     )
+    logos = "".join(
+        f'<figure class="logo-card{" logo-wide" if l.get("wide") else ""}"><img src="../{e(l["src"])}" alt="{e(l["label"])}" loading="lazy">'
+        f'<figcaption><span class="small">{e(l["label"])}</span>'
+        f'<a class="btn btn-sm" href="../{e(l["src"])}" download>Download</a></figcaption></figure>'
+        for l in c["logos"]
+    )
     tech = "".join(f"<li>{e(r)}</li>" for r in rider["technical"])
     hosp = "".join(f"<li>{e(r)}</li>" for r in rider["hospitality"])
     mixes = "".join(
@@ -335,6 +341,14 @@ def press(c: dict) -> str:
     <h2>Press photos</h2>
     <p class="muted no-print">High resolution. Credit the photographer when you use them.</p>
     <div class="photo-grid">{photos}</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Logos</h2>
+    <p class="muted no-print">Use these on flyers and event pages. Keep them unaltered.</p>
+    <div class="logo-grid">{logos}</div>
   </div>
 </section>
 
