@@ -89,7 +89,7 @@ body:not(.press) main > .section:nth-of-type(odd) { background: var(--bg-alt); }
 .mix-bar span { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mix-bar i { width: 16px; height: 14px; border: 1px solid #fff; border-radius: 3px; background: rgb(255 255 255 / .2); }
 .mix-bar i:last-child { background: var(--accent); border-color: #ffb3b9; }
-.mix-media { aspect-ratio: 16 / 7; border-radius: 10px; overflow: hidden; margin-bottom: 16px; background: linear-gradient(135deg, #3a0a10, #0a1640); }
+.mix-media { aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; margin-bottom: 16px; background: linear-gradient(135deg, #3a0a10, #0a1640); }
 .mix-media iframe { width: 100%; height: 100%; border: 0; }
 .mix-link { display: flex; height: 100%; align-items: center; justify-content: center; gap: 12px; font-weight: 600; text-decoration: none; }
 .play { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); position: relative; }
