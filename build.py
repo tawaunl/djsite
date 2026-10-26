@@ -116,7 +116,7 @@ def mix_card(m: dict) -> str:
     if m.get("embed"):
         media = (
             f'<iframe src="{e(m["embed"])}" title="{e(m["title"])}" loading="lazy" '
-            f'allow="autoplay" frameborder="0"></iframe>'
+            f'allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'
         )
     else:
         media = (

@@ -27,10 +27,9 @@
 
   "socials": [
     { "label": "Instagram", "url": "https://instagram.com/twonmixes" },
-    { "label": "Links", "url": "https://linktr.ee/twoninthemix" },
-    { "label": "SoundCloud", "url": "https://soundcloud.com/" },
-    { "label": "Mixcloud", "url": "https://mixcloud.com/" },
-    { "label": "YouTube", "url": "https://youtube.com/" }
+    { "label": "SoundCloud", "url": "https://soundcloud.com/twon_online" },
+    { "label": "YouTube", "url": "https://youtube.com/@twoninthemix" },
+    { "label": "Linktree", "url": "https://linktr.ee/twoninthemix" }
   ],
 
   "bio": {
@@ -38,7 +37,7 @@
     "long": [
       "TWON is a San Francisco based open format DJ who builds his sets on hip hop and R&B. Throwbacks, West Coast bounce, and the records that defined a moment sit right next to today's hits, so every crowd hears something they love and something they forgot they loved.",
       "When the energy climbs, he takes the room into house and tech house without losing the groove. A festival lover at heart, TWON reads the floor first and plays for the vibe, not the playlist.",
-      "His DEEP CUTZ mix series digs into the catalogs of artists who shaped a scene, starting with YG: quick cuts of the songs ya had to be there for. TODO: add where you play, residencies, or what's next."
+      "His DEEP CUTZ mix series digs into the catalogs of artists who shaped a scene, starting with YG: quick cuts of the songs ya had to be there for. He also cuts his own edits, like House Every Weekend (TWON x BRWDY Edit). TODO: add where you play, residencies, or what's next."
     ]
   },
 
@@ -52,18 +51,25 @@
 
   "mixes": [
     {
-      "title": "DEEP CUTZ: YG",
+      "title": "DEEP CUTZ: YG Quick Cutz",
       "description": "Songs ya had to be there for. Quick cuts.",
       "window_title": "TWON has sent you a file 📁",
-      "embed": "",
-      "url": "https://linktr.ee/twoninthemix"
+      "embed": "https://www.youtube-nocookie.com/embed/dkCq4enGQEY",
+      "url": "https://www.youtube.com/watch?v=dkCq4enGQEY"
     },
     {
-      "title": "TODO: Next mix",
-      "description": "TODO: Genre and length, e.g. R&B into house, 60 min",
+      "title": "House Every Weekend (TWON x BRWDY Edit)",
+      "description": "House edit with BRWDY.",
       "window_title": "TWON has sent you a file 📁",
-      "embed": "",
-      "url": "https://linktr.ee/twoninthemix"
+      "embed": "https://www.youtube-nocookie.com/embed/S1xeRe3h21c",
+      "url": "https://www.youtube.com/watch?v=S1xeRe3h21c"
+    },
+    {
+      "title": "More mixes on SoundCloud",
+      "description": "Every set, all in one place.",
+      "window_title": "TWON has sent you a file 📁",
+      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F97884863&color=%23ff2d3d&visual=true",
+      "url": "https://soundcloud.com/twon_online/tracks"
     }
   ],
 
