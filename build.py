@@ -272,7 +272,7 @@ def home(c: dict) -> str:
   <div class="wrap split">
     <div>
       <h2>Book {e(site['name'])}</h2>
-      <p>House and tech house nights, afro house day parties, festivals, private events, and brand activations. Share the details and I'll follow up with availability and a quote.</p>
+      <p>House nights, hip hop nights, and everything in between: clubs, day parties, festivals, private events, and brand activations. Share the details and I'll follow up with availability and a quote.</p>
       <p class="muted">{e(c['contact']['response_time'])}</p>
       {contact_block(c)}
       <p><a href="press/">Promoters: grab the press kit</a> for bios, photos, and the tech rider.</p>
