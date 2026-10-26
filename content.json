@@ -3,7 +3,7 @@
 
   "site": {
     "name": "TWON",
-    "tagline": "Vibes curator. Open format, hip hop and R&B first.",
+    "tagline": "House, tech house, and afro house, with a hip hop and R&B crossover that keeps the floor guessing.",
     "location": "San Francisco, CA",
     "url": "https://tawaunl.github.io/djsite/",
     "banner": "assets/img/brand/twon-banner.webp",
@@ -42,36 +42,36 @@
   ],
 
   "bio": {
-    "short": "TWON is a San Francisco open format DJ rooted in hip hop and R&B, sliding into house and tech house when the night calls for it. Vibes curator, festival lover, and the guy digging up the songs ya had to be there for.",
+    "short": "TWON is a San Francisco DJ who lives in the crossover. House, tech house, and afro house drive his sets, and he flips between them and hip hop and R&B so smoothly the floor never feels the switch. Vibes curator, festival lover, and the guy who can take a room from a West Coast throwback to a four on the floor peak in one blend.",
     "long": [
-      "TWON is a San Francisco based open format DJ who builds his sets on hip hop and R&B. Throwbacks, West Coast bounce, and the records that defined a moment sit right next to today's hits, so every crowd hears something they love and something they forgot they loved.",
-      "When the energy climbs, he takes the room into house and tech house without losing the groove. A festival lover at heart, TWON reads the floor first and plays for the vibe, not the playlist.",
-      "His DEEP CUTZ mix series digs into the catalogs of artists who shaped a scene, starting with YG: quick cuts of the songs ya had to be there for. He also cuts his own edits, like House Every Weekend (TWON x BRWDY Edit). TODO: add where you play, residencies, or what's next."
+      "TWON is a San Francisco DJ built for the crossover. His sets run on house, tech house, and afro house, and he moves between those and hip hop and R&B without ever dropping the groove.",
+      "That range is the point. He can open with rolling afro house, build to a tech house peak, then flip a hip hop classic into a house edit and keep the whole room with him. A festival lover at heart, TWON reads the floor first and plays for the vibe, not the playlist.",
+      "His own edits, like House Every Weekend (TWON x BRWDY Edit), live right on that line between scenes, and his DEEP CUTZ series digs into the catalogs that shaped them, starting with YG. TODO: add where you play, residencies, or what's next."
     ]
   },
 
   "stats": [
     { "value": "SF", "label": "Based in the Bay" },
-    { "value": "Open", "label": "Format, hip hop and R&B first" },
-    { "value": "Deep Cutz", "label": "Original mix series" }
+    { "value": "4x4", "label": "House, tech house, afro house" },
+    { "value": "Crossover", "label": "Hip hop and R&B, blended into house" }
   ],
 
-  "genres": ["Hip Hop", "R&B", "West Coast", "Throwbacks", "House", "Tech House"],
+  "genres": ["House", "Tech House", "Afro House", "Hip Hop", "R&B", "West Coast"],
 
   "mixes": [
-    {
-      "title": "DEEP CUTZ: YG Quick Cutz",
-      "description": "Songs ya had to be there for. Quick cuts.",
-      "window_title": "TWON has sent you a file 📁",
-      "embed": "https://www.youtube-nocookie.com/embed/dkCq4enGQEY",
-      "url": "https://www.youtube.com/watch?v=dkCq4enGQEY"
-    },
     {
       "title": "House Every Weekend (TWON x BRWDY Edit)",
       "description": "House edit with BRWDY.",
       "window_title": "TWON has sent you a file 📁",
       "embed": "https://www.youtube-nocookie.com/embed/S1xeRe3h21c",
       "url": "https://www.youtube.com/watch?v=S1xeRe3h21c"
+    },
+    {
+      "title": "DEEP CUTZ: YG Quick Cutz",
+      "description": "Songs ya had to be there for. Quick cuts.",
+      "window_title": "TWON has sent you a file 📁",
+      "embed": "https://www.youtube-nocookie.com/embed/dkCq4enGQEY",
+      "url": "https://www.youtube.com/watch?v=dkCq4enGQEY"
     },
     {
       "title": "More mixes on SoundCloud",
