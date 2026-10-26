@@ -3,7 +3,7 @@
 
   "site": {
     "name": "TWON",
-    "tagline": "House, tech house, and afro house, with a hip hop and R&B crossover that keeps the floor guessing.",
+    "tagline": "House and hip hop, both at full strength, with seamless crossovers in between.",
     "location": "San Francisco, CA",
     "url": "https://tawaunl.github.io/djsite/",
     "banner": "assets/img/brand/twon-banner.webp",
@@ -42,21 +42,22 @@
   ],
 
   "bio": {
-    "short": "TWON is a San Francisco DJ who lives in the crossover. House, tech house, and afro house drive his sets, and he flips between them and hip hop and R&B so smoothly the floor never feels the switch. Vibes curator, festival lover, and the guy who can take a room from a West Coast throwback to a four on the floor peak in one blend.",
+    "short": "TWON is a San Francisco DJ who excels at both house and hip hop. He can carry a night on house, tech house, and afro house, or run a full hip hop and R&B set, and when a room wants both he crosses over so smoothly the floor never feels the switch. Vibes curator, festival lover, and a DJ you can book for either night.",
     "long": [
-      "TWON is a San Francisco DJ built for the crossover. His sets run on house, tech house, and afro house, and he moves between those and hip hop and R&B without ever dropping the groove.",
-      "That range is the point. He can open with rolling afro house, build to a tech house peak, then flip a hip hop classic into a house edit and keep the whole room with him. A festival lover at heart, TWON reads the floor first and plays for the vibe, not the playlist.",
-      "His own edits, like House Every Weekend (TWON x BRWDY Edit), live right on that line between scenes, and his DEEP CUTZ series digs into the catalogs that shaped them, starting with YG. TODO: add where you play, residencies, or what's next."
+      "TWON is a San Francisco DJ with two home bases: house and hip hop. He plays both at full strength, never one as a side dish to the other.",
+      "On house nights he moves through house, tech house, and afro house, building from rolling grooves to a peak. On hip hop nights he runs West Coast bounce, R&B, throwbacks, and today's hits. When a room wants both, he crosses over without dropping the groove. A festival lover at heart, TWON reads the floor first and plays for the vibe, not the playlist.",
+      "That range shows up in his own work, from house flips like House Every Weekend (TWON x BRWDY Edit) to DEEP CUTZ, his series digging into hip hop catalogs, starting with YG. TODO: add where you play, residencies, or what's next."
     ]
   },
 
   "stats": [
     { "value": "SF", "label": "Based in the Bay" },
-    { "value": "4x4", "label": "House, tech house, afro house" },
-    { "value": "Crossover", "label": "Hip hop and R&B, blended into house" }
+    { "value": "House", "label": "House, tech house, afro house" },
+    { "value": "Hip Hop", "label": "Hip hop, R&B, West Coast" },
+    { "value": "Crossover", "label": "Seamless blends between both" }
   ],
 
-  "genres": ["House", "Tech House", "Afro House", "Hip Hop", "R&B", "West Coast"],
+  "genres": ["House", "Hip Hop", "Tech House", "R&B", "Afro House", "West Coast"],
 
   "mixes_section": {
     "title": "Mixes & Flips",
