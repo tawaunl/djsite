@@ -9,7 +9,7 @@ A static site with two pages:
 
 All copy lives in [`content.json`](content.json). Replace every `TODO` and the `DJ NAME` placeholders, then rebuild.
 
-- **Photos:** drop files into `static/assets/img/` and point `hero_image` and `press_photos[].src` at them.
+- **Photos and logos:** brand files live in `static/assets/img/brand/`. `site.banner` is the hero art, `site.logo_mark` the menu icon, and `logos` lists the press kit downloads. Press photos go in `press_photos`.
 - **Mixes:** set `embed` to a SoundCloud or Mixcloud player URL (the `src` from their embed code) to show an inline player. Leave it empty to show a "Listen" link instead.
 - **Dates:** past dates hide automatically on each build.
 - **Booking form:** with `booking.form_endpoint` empty, the form opens the visitor's email app with the request filled in. Paste a [Formspree](https://formspree.io) form URL there to receive requests without that step.

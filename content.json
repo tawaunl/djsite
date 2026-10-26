@@ -6,9 +6,18 @@
     "tagline": "Vibes curator. Open format, hip hop and R&B first.",
     "location": "San Francisco, CA",
     "url": "https://tawaunl.github.io/djsite/",
-    "hero_image": "assets/img/hero.svg",
+    "banner": "assets/img/brand/twon-banner.webp",
+    "logo_mark": "assets/img/brand/twon-mark-96.png",
+    "og_image": "assets/img/og-image.png",
     "logo_text": "TWON"
   },
+
+  "logos": [
+    { "src": "assets/img/brand/twon-banner.webp", "label": "Banner, teal", "wide": true },
+    { "src": "assets/img/brand/twon-logo-teal.webp", "label": "Logo, teal" },
+    { "src": "assets/img/brand/twon-logo-gold.webp", "label": "Logo, brown and gold" },
+    { "src": "assets/img/brand/twon-logo-gold-black.png", "label": "Logo, black and gold" }
+  ],
 
   "contact": {
     "booking_email": "twoninthemix@gmail.com",
