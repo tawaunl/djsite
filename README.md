@@ -1,13 +1,25 @@
 # TWON: booking site and press kit
 
-A static site with two pages:
+## 👉 Live site: **[twonmixes.com](https://twonmixes.com)**
 
-- **Home** (`/`): hero, about, mixes, venues and testimonials, upcoming dates, and a booking request form.
-- **Press kit** (`/press/`): copyable short and full bios, downloadable press photos, tech rider, hospitality, and contacts. The "Save as PDF" button prints a clean one-sheet.
+**Press kit:** [twonmixes.com/press](https://twonmixes.com/press/) · **Book:** [twonmixes.com/#book](https://twonmixes.com/#book)
+
+[![TWON home page](docs/screenshots/home.webp)](https://twonmixes.com)
+
+| Mixes & Flips | Press kit |
+| :-: | :-: |
+| [![Mixes and Flips section](docs/screenshots/mixes.webp)](https://twonmixes.com/#mixes) | [![Press kit page](docs/screenshots/press.webp)](https://twonmixes.com/press/) |
+| **Booking form** | **On a phone** |
+| [![Booking form](docs/screenshots/booking.webp)](https://twonmixes.com/#book) | [![Home page on a phone](docs/screenshots/phone.webp)](https://twonmixes.com) |
+
+## What's on the site
+
+- **Home** (`/`): banner hero, about, Mixes & Flips (embedded YouTube and SoundCloud players), upcoming dates, and a booking request form.
+- **Press kit** (`/press/`): copyable short and full bios, downloadable press photos and logos, tech rider, hospitality, and contacts. The "Save as PDF" button prints a clean one-sheet.
 
 ## Edit content
 
-All copy lives in [`content.json`](content.json). Replace every `TODO` and the `DJ NAME` placeholders, then rebuild.
+All copy lives in [`content.json`](content.json). Replace anything marked `TODO`, then rebuild.
 
 - **Photos and logos:** brand files live in `static/assets/img/brand/`. `site.banner` is the hero art, `site.logo_mark` the menu icon, and `logos` lists the press kit downloads. Press photos go in `press_photos`.
 - **Mixes:** set `embed` to a SoundCloud or Mixcloud player URL (the `src` from their embed code) to show an inline player. Leave it empty to show a "Listen" link instead.
