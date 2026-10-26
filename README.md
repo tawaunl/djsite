@@ -1,4 +1,4 @@
-# DJ booking site and press kit
+# TWON: booking site and press kit
 
 A static site with two pages:
 

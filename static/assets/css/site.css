@@ -68,7 +68,8 @@ p { margin: 0 0 1em; }
 
 /* sections */
 .section { padding: 88px 0; }
-.section.alt { background: var(--bg-alt); }
+/* alternate bands automatically so hidden sections never leave two alike in a row */
+body:not(.press) main > .section:nth-of-type(odd) { background: var(--bg-alt); }
 .split { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: start; }
 @media (max-width: 860px) { .split { grid-template-columns: 1fr; gap: 40px; } .section { padding: 64px 0; } }
 
@@ -83,6 +84,11 @@ p { margin: 0 0 1em; }
 /* mixes */
 .mix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
 .mix { background: var(--surface); border-radius: var(--radius); padding: 16px; }
+.mix { padding-top: 0; overflow: hidden; }
+.mix-bar { display: flex; align-items: center; gap: 6px; margin: 0 -16px 16px; padding: 6px 8px 6px 12px; background: linear-gradient(90deg, #0a2a8c, var(--accent-2)); font: 700 .8rem/1.4 Tahoma, Verdana, var(--body); color: #fff; }
+.mix-bar span { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mix-bar i { width: 16px; height: 14px; border: 1px solid #fff; border-radius: 3px; background: rgb(255 255 255 / .2); }
+.mix-bar i:last-child { background: var(--accent); border-color: #ffb3b9; }
 .mix-media { aspect-ratio: 16 / 7; border-radius: 10px; overflow: hidden; margin-bottom: 16px; background: linear-gradient(135deg, #3a0a10, #0a1640); }
 .mix-media iframe { width: 100%; height: 100%; border: 0; }
 .mix-link { display: flex; height: 100%; align-items: center; justify-content: center; gap: 12px; font-weight: 600; text-decoration: none; }

@@ -124,6 +124,7 @@ def mix_card(m: dict) -> str:
             f'<span class="play" aria-hidden="true"></span>Listen</a>'
         )
     return f"""<article class="mix">
+  <div class="mix-bar" aria-hidden="true"><span>{e(m.get('window_title', 'Incoming file'))}</span><i></i><i></i><i></i></div>
   <div class="mix-media">{media}</div>
   <h3>{e(m['title'])}</h3>
   <p class="muted">{e(m['description'])}</p>
@@ -159,6 +160,20 @@ def testimonials(c: dict) -> str:
         f'<figcaption><b>{e(t["name"])}</b> <span class="muted">{e(t["role"])}</span></figcaption></figure>'
         for t in c["testimonials"]
     ) + "</div>"
+
+
+def played_section(c: dict) -> str:
+    # Hidden until there's something real to show; no filler venues.
+    if not c["venues"] and not c["testimonials"]:
+        return ""
+    return f"""<section id="played" class="section">
+  <div class="wrap">
+    <h2>Played at</h2>
+    {venues(c) if c["venues"] else ""}
+    {testimonials(c) if c["testimonials"] else ""}
+  </div>
+</section>
+"""
 
 
 def options(values: list[str]) -> str:
@@ -230,22 +245,15 @@ def home(c: dict) -> str:
   </div>
 </section>
 
-<section id="mixes" class="section alt">
+<section id="mixes" class="section">
   <div class="wrap">
     <h2>Mixes</h2>
     <div class="mix-grid">{mixes}</div>
   </div>
 </section>
 
-<section id="played" class="section">
-  <div class="wrap">
-    <h2>Played at</h2>
-    {venues(c)}
-    {testimonials(c)}
-  </div>
-</section>
-
-<section id="dates" class="section alt">
+{played_section(c)}
+<section id="dates" class="section">
   <div class="wrap">
     <h2>Upcoming dates</h2>
     {dates_list(c)}
@@ -256,7 +264,7 @@ def home(c: dict) -> str:
   <div class="wrap split">
     <div>
       <h2>Book {e(site['name'])}</h2>
-      <p>Clubs, private parties, weddings, corporate events, and festivals. Share the details and I'll follow up with availability and a quote.</p>
+      <p>Clubs, day parties, festivals, private events, and brand activations. Share the details and I'll follow up with availability and a quote.</p>
       <p class="muted">{e(c['contact']['response_time'])}</p>
       {contact_block(c)}
       <p><a href="press/">Promoters: grab the press kit</a> for bios, photos, and the tech rider.</p>
@@ -331,7 +339,7 @@ def press(c: dict) -> str:
 
 <section class="section">
   <div class="wrap split">
-    <div><h2>Played at</h2>{venues(c)}</div>
+    {f'<div><h2>Played at</h2>{venues(c)}</div>' if c["venues"] else ""}
     <div><h2>Listen</h2><ul class="plain">{mixes}</ul></div>
   </div>
 </section>
