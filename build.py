@@ -65,7 +65,7 @@ def header(c: dict, base: str) -> str:
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="{base}#about">About</a>
-      <a href="{base}#mixes">Mixes</a>
+      <a href="{base}#mixes">{e(c['mixes_section']['title'])}</a>
       <a href="{base}#dates">Dates</a>
       <a href="{base}press/">Press kit</a>
       <a class="btn btn-sm btn-primary" href="{base}#book">Book now</a>
@@ -113,6 +113,11 @@ def genres(c: dict) -> str:
     return '<ul class="tags">' + "".join(f"<li>{e(g)}</li>" for g in c["genres"]) + "</ul>"
 
 
+def mix_kind(m: dict, tag: str = "p") -> str:
+    # small label like "Edit" or "Mix" so original work stands out
+    return f'<{tag} class="mix-kind">{e(m["kind"])}</{tag}>' if m.get("kind") else ""
+
+
 def mix_card(m: dict) -> str:
     if m.get("embed"):
         media = (
@@ -127,6 +132,7 @@ def mix_card(m: dict) -> str:
     return f"""<article class="mix">
   <div class="mix-bar" aria-hidden="true"><span>{e(m.get('window_title', 'Incoming file'))}</span><i></i><i></i><i></i></div>
   <div class="mix-media">{media}</div>
+  {mix_kind(m)}
   <h3>{e(m['title'])}</h3>
   <p class="muted">{e(m['description'])}</p>
 </article>"""
@@ -248,7 +254,8 @@ def home(c: dict) -> str:
 
 <section id="mixes" class="section">
   <div class="wrap">
-    <h2>Mixes</h2>
+    <h2>{e(c['mixes_section']['title'])}</h2>
+    <p class="muted section-intro">{e(c['mixes_section']['intro'])}</p>
     <div class="mix-grid">{mixes}</div>
   </div>
 </section>
@@ -296,7 +303,7 @@ def press(c: dict) -> str:
     tech = "".join(f"<li>{e(r)}</li>" for r in rider["technical"])
     hosp = "".join(f"<li>{e(r)}</li>" for r in rider["hospitality"])
     mixes = "".join(
-        f'<li><a href="{e(m["url"])}" target="_blank" rel="noopener">{e(m["title"])}</a> <span class="muted">{e(m["description"])}</span></li>'
+        f'<li>{mix_kind(m, "span")} <a href="{e(m["url"])}" target="_blank" rel="noopener">{e(m["title"])}</a> <span class="muted">{e(m["description"])}</span></li>'
         for m in c["mixes"]
     )
     return f"""{head(c, f"{site['name']} | Press kit", f"Press kit for {site['name']}: bios, photos, tech rider, and booking contacts.", "../", site['url'].rstrip('/') + '/press/')}
@@ -355,7 +362,7 @@ def press(c: dict) -> str:
 <section class="section">
   <div class="wrap split">
     {f'<div><h2>Played at</h2>{venues(c)}</div>' if c["venues"] else ""}
-    <div><h2>Listen</h2><ul class="plain">{mixes}</ul></div>
+    <div><h2>{e(c['mixes_section']['title'])}</h2><ul class="plain">{mixes}</ul></div>
   </div>
 </section>
 

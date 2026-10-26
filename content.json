@@ -58,16 +58,23 @@
 
   "genres": ["House", "Tech House", "Afro House", "Hip Hop", "R&B", "West Coast"],
 
+  "mixes_section": {
+    "title": "Mixes & Flips",
+    "intro": "Full sets, plus my own remixes, edits, and flips."
+  },
+
   "mixes": [
     {
       "title": "House Every Weekend (TWON x BRWDY Edit)",
-      "description": "House edit with BRWDY.",
+      "kind": "Edit",
+      "description": "My house flip, made with BRWDY.",
       "window_title": "TWON has sent you a file 📁",
       "embed": "https://www.youtube-nocookie.com/embed/S1xeRe3h21c",
       "url": "https://www.youtube.com/watch?v=S1xeRe3h21c"
     },
     {
       "title": "DEEP CUTZ: YG Quick Cutz",
+      "kind": "Mix",
       "description": "Songs ya had to be there for. Quick cuts.",
       "window_title": "TWON has sent you a file 📁",
       "embed": "https://www.youtube-nocookie.com/embed/dkCq4enGQEY",
@@ -75,7 +82,8 @@
     },
     {
       "title": "More mixes on SoundCloud",
-      "description": "Every set, all in one place.",
+      "kind": "All mixes",
+      "description": "Every set and flip, all in one place.",
       "window_title": "TWON has sent you a file 📁",
       "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F97884863&color=%2350d6db&visual=true",
       "url": "https://soundcloud.com/twon_online/tracks"
