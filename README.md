@@ -27,4 +27,4 @@ Python 3.9+ standard library only. Output goes to `dist/` (not committed).
 
 The live site is **https://twonmixes.com**, hosted on Netlify. `netlify.toml` tells Netlify to run `python3 build.py` and publish `dist/`, so every push to `main` redeploys automatically.
 
-`.github/workflows/pages.yml` also publishes a copy to GitHub Pages. Every page's canonical link points at twonmixes.com, so search engines treat the Netlify site as the real one.
+Every pull request also gets a Netlify deploy preview link, so you can check changes before merging.
