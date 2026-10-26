@@ -29,8 +29,8 @@
 
   "booking": {
     "_form_endpoint_help": "Optional. Paste a Formspree (or similar) form URL to receive requests by POST. Leave empty and the form opens the visitor's email app instead.",
-    "form_endpoint": "",
-    "event_types": ["Club night", "Day party", "Festival", "Private party", "Brand activation", "Corporate event", "Other"],
+    "form_endpoint": "https://formspree.io/f/xoeeeeep",
+    "event_types": ["Club night", "Day party", "Festival", "Private party", "Wedding", "Brand activation", "Corporate event", "Other"],
     "budget_ranges": ["Under $500", "$500 to $1,000", "$1,000 to $2,500", "$2,500+", "Not sure yet"]
   },
 
