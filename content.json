@@ -6,9 +6,18 @@
     "tagline": "Vibes curator. Open format, hip hop and R&B first.",
     "location": "San Francisco, CA",
     "url": "https://tawaunl.github.io/djsite/",
-    "hero_image": "assets/img/hero.svg",
+    "banner": "assets/img/brand/twon-banner.webp",
+    "logo_mark": "assets/img/brand/twon-mark-96.png",
+    "og_image": "assets/img/og-image.png",
     "logo_text": "TWON"
   },
+
+  "logos": [
+    { "src": "assets/img/brand/twon-banner.webp", "label": "Banner, teal", "wide": true },
+    { "src": "assets/img/brand/twon-logo-teal.webp", "label": "Logo, teal" },
+    { "src": "assets/img/brand/twon-logo-gold.webp", "label": "Logo, brown and gold" },
+    { "src": "assets/img/brand/twon-logo-gold-black.png", "label": "Logo, black and gold" }
+  ],
 
   "contact": {
     "booking_email": "twoninthemix@gmail.com",
@@ -68,7 +77,7 @@
       "title": "More mixes on SoundCloud",
       "description": "Every set, all in one place.",
       "window_title": "TWON has sent you a file 📁",
-      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F97884863&color=%23ff2d3d&visual=true",
+      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F97884863&color=%2350d6db&visual=true",
       "url": "https://soundcloud.com/twon_online/tracks"
     }
   ],
