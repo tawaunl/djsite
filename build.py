@@ -222,7 +222,8 @@ def home(c: dict) -> str:
 {header(c, "")}
 <main id="main">
 
-<section class="hero" style="--hero: url('{e(site['hero_image'])}')">
+<section class="hero">
+  <img class="hero-bg" src="{e(site['hero_image'])}" alt="" fetchpriority="high">
   <div class="wrap">
     <p class="eyebrow">{e(site['location'])}</p>
     <h1>{e(site['name'])}</h1>
