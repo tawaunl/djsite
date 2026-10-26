@@ -77,11 +77,22 @@
       data.append("_subject", subject);
       try {
         const res = await fetch(endpoint, { method: "POST", body: data, headers: { Accept: "application/json" } });
-        if (!res.ok) throw new Error(String(res.status));
+        if (!res.ok) {
+          // Formspree returns { errors: [{ field, message }] } when it rejects a submission.
+          const body = await res.json().catch(() => ({}));
+          const errors = Array.isArray(body.errors) ? body.errors : [];
+          errors.forEach((err) => {
+            const el = err.field && form.querySelector(`[name="${err.field}"]`);
+            if (el) el.setAttribute("aria-invalid", "true");
+          });
+          const msg = errors.map((err) => err.message).filter(Boolean).join(" ");
+          throw Object.assign(new Error(msg), { fromFormspree: true });
+        }
         form.reset();
         setStatus("Request sent. You'll hear back soon.", "ok");
-      } catch {
-        setStatus(`That didn't go through. Email ${form.dataset.email} directly.`, "err");
+      } catch (err) {
+        const detail = err && err.fromFormspree && err.message ? `${err.message} ` : "";
+        setStatus(`${detail}That didn't go through. Email ${form.dataset.email} directly.`, "err");
       } finally {
         button.disabled = false;
       }
