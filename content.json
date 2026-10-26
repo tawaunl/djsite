@@ -1,0 +1,112 @@
+{
+  "_readme": "All site copy lives here. Edit this file, then run ./build.py. Anything marked TODO is a placeholder.",
+
+  "site": {
+    "name": "DJ NAME",
+    "tagline": "Open format DJ. Hip Hop, R&B, House, Afrobeats.",
+    "location": "Your City, ST",
+    "url": "https://tawaunl.github.io/djsite/",
+    "hero_image": "assets/img/hero.svg",
+    "logo_text": "DJ NAME"
+  },
+
+  "contact": {
+    "booking_email": "booking@example.com",
+    "management_name": "",
+    "management_email": "",
+    "phone": "",
+    "response_time": "I reply to booking requests within 48 hours."
+  },
+
+  "booking": {
+    "_form_endpoint_help": "Optional. Paste a Formspree (or similar) form URL to receive requests by POST. Leave empty and the form opens the visitor's email app instead.",
+    "form_endpoint": "",
+    "event_types": ["Club night", "Private party", "Wedding", "Corporate event", "Festival", "Brand activation", "Other"],
+    "budget_ranges": ["Under $500", "$500 to $1,000", "$1,000 to $2,500", "$2,500+", "Not sure yet"]
+  },
+
+  "socials": [
+    { "label": "Instagram", "url": "https://instagram.com/" },
+    { "label": "SoundCloud", "url": "https://soundcloud.com/" },
+    { "label": "Mixcloud", "url": "https://mixcloud.com/" },
+    { "label": "TikTok", "url": "https://tiktok.com/" }
+  ],
+
+  "bio": {
+    "short": "TODO: One or two sentences promoters can paste into a flyer. Who you are, what you play, and where you've played.",
+    "long": [
+      "TODO: Paragraph one. How you started DJing and what drives your sound.",
+      "TODO: Paragraph two. Residencies, notable gigs, and the crowds you play for.",
+      "TODO: Paragraph three. What's next: releases, tours, or projects."
+    ]
+  },
+
+  "stats": [
+    { "value": "10+", "label": "Years behind the decks" },
+    { "value": "500+", "label": "Events played" },
+    { "value": "3", "label": "Weekly residencies" }
+  ],
+
+  "genres": ["Hip Hop", "R&B", "House", "Afrobeats", "Amapiano", "Throwbacks"],
+
+  "mixes": [
+    {
+      "title": "TODO: Latest mix title",
+      "description": "Open format, 60 min",
+      "embed": "",
+      "url": "https://soundcloud.com/"
+    },
+    {
+      "title": "TODO: Second mix title",
+      "description": "House and Amapiano, 45 min",
+      "embed": "",
+      "url": "https://mixcloud.com/"
+    }
+  ],
+
+  "venues": [
+    "TODO Venue One",
+    "TODO Venue Two",
+    "TODO Festival",
+    "TODO Brand",
+    "TODO Club",
+    "TODO Lounge"
+  ],
+
+  "testimonials": [
+    {
+      "quote": "TODO: A short quote from a promoter, venue owner, or client.",
+      "name": "Name",
+      "role": "Promoter, Venue"
+    },
+    {
+      "quote": "TODO: Another quote. Wedding and corporate clients carry weight here.",
+      "name": "Name",
+      "role": "Client"
+    }
+  ],
+
+  "dates": [
+    { "date": "2026-11-14", "venue": "TODO Venue", "city": "Your City, ST", "url": "" },
+    { "date": "2026-11-28", "venue": "TODO Venue", "city": "Another City, ST", "url": "" }
+  ],
+
+  "press_photos": [
+    { "src": "assets/img/press-1.svg", "alt": "Press photo, live set", "credit": "Photo: TODO" },
+    { "src": "assets/img/press-2.svg", "alt": "Press photo, portrait", "credit": "Photo: TODO" },
+    { "src": "assets/img/press-3.svg", "alt": "Press photo, crowd", "credit": "Photo: TODO" }
+  ],
+
+  "rider": {
+    "technical": [
+      "2x Pioneer CDJ-3000 or Technics SL-1200 (Serato DVS)",
+      "1x Pioneer DJM-900NXS2 or DJM-A9 mixer",
+      "2x booth monitors, controlled from the mixer",
+      "Table at waist height, at least 6 ft wide",
+      "Dedicated power strip at the booth"
+    ],
+    "hospitality": [
+      "TODO: Drinks, guest list spots, parking, green room"
+    ]
+  }
+}
