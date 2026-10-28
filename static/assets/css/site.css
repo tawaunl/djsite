@@ -99,8 +99,10 @@ body:not(.press) main > .section:nth-of-type(odd) { background: var(--bg-alt); }
 .mix { padding-top: 0; overflow: hidden; }
 .mix-bar { display: flex; align-items: center; gap: 6px; margin: 0 -16px 16px; padding: 6px 8px 6px 12px; background: linear-gradient(90deg, #0b4547, #1a8a8e); font: 700 .8rem/1.4 Tahoma, Verdana, var(--body); color: #fff; }
 .mix-bar span { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mix-bar i { width: 16px; height: 14px; border: 1px solid #fff; border-radius: 3px; background: rgb(255 255 255 / .2); }
-.mix-bar i:last-child { background: var(--accent-2); border-color: #ffe0a3; }
+/* classic Windows 95/98 title-bar buttons: raised gray bevel, black glyphs; close is brand gold */
+.mix-bar i { display: grid; place-items: center; width: 18px; height: 16px; flex: none; background: #d4d0c8; color: #000; font: 700 11px/1 Tahoma, Verdana, sans-serif; font-style: normal; border: 1px solid; border-color: #fff #404040 #404040 #fff; box-shadow: inset -1px -1px #808080, inset 1px 1px #dfdfdf; }
+.mix-bar i:first-of-type { align-content: end; padding-bottom: 3px; }
+.mix-bar i:last-child { margin-left: 2px; background: var(--accent-2); }
 .mix-media { aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; margin-bottom: 16px; background: linear-gradient(135deg, #0b2e30, #2b1811); }
 .mix-media iframe { width: 100%; height: 100%; border: 0; }
 .mix-link { display: flex; height: 100%; align-items: center; justify-content: center; gap: 12px; font-weight: 600; text-decoration: none; }

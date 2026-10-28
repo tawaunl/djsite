@@ -130,7 +130,7 @@ def mix_card(m: dict) -> str:
             f'<span class="play" aria-hidden="true"></span>Listen</a>'
         )
     return f"""<article class="mix">
-  <div class="mix-bar" aria-hidden="true"><span>{e(m.get('window_title', 'Incoming file'))}</span><i></i><i></i><i></i></div>
+  <div class="mix-bar" aria-hidden="true"><span></span><i>_</i><i>□</i><i>×</i></div>
   <div class="mix-media">{media}</div>
   {mix_kind(m)}
   <h3>{e(m['title'])}</h3>
