@@ -39,7 +39,7 @@ Netlify posts a deploy preview link on every PR.
 ## Brand
 
 - **Colors:** teal `#50d6db` (primary: buttons, links) and gold `#f2b544` (highlights: stats, labels), on a near-black background. Both come from the logos in `static/assets/img/brand/`.
-- **Look:** old-school computer and early-2000s internet nostalgia, like retro file-transfer windows ("TWON has sent you a file 📁"). Use it for promo visuals and playful touches, not body text.
+- **Look:** old-school computer and early-2000s internet nostalgia, like retro file-transfer windows ("TWON has sent you a file 📁"). On the site, each Mixes & Flips card has its own file-name title bar (`house_every_weekend_edit.mp3`); keep those unique, never the same line on every card. Use the look for promo visuals and playful touches, not body text.
 
 ## Writing style
 
