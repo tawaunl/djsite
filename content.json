@@ -51,7 +51,7 @@
   },
 
   "stats": [
-    { "value": "SF", "label": "Based in the Bay" },
+    { "value": "San Francisco", "label": "Based in the Bay" },
     { "value": "House", "label": "House, tech house, afro house" },
     { "value": "Hip Hop", "label": "Hip hop, R&B, West Coast" },
     { "value": "Crossover", "label": "Seamless blends between both" }
