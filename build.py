@@ -17,6 +17,7 @@ import shutil
 from datetime import date
 from html import escape
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent
 
@@ -118,7 +119,11 @@ def mix_kind(m: dict, tag: str = "p") -> str:
     return f'<{tag} class="mix-kind">{e(m["kind"])}</{tag}>' if m.get("kind") else ""
 
 
-def mix_card(m: dict) -> str:
+# retro window title bar; the minimize, maximize, and close glyphs are drawn in CSS
+MIX_BAR = '<div class="mix-bar" aria-hidden="true"><span></span><i class="min"></i><i class="max"></i><i class="close"></i></div>'
+
+
+def mix_media(m: dict) -> str:
     if m.get("embed"):
         media = (
             f'<iframe src="{e(m["embed"])}" title="{e(m["title"])}" loading="lazy" '
@@ -129,13 +134,69 @@ def mix_card(m: dict) -> str:
             f'<a class="mix-link" href="{e(m["url"])}" target="_blank" rel="noopener">'
             f'<span class="play" aria-hidden="true"></span>Listen</a>'
         )
+    return f'<div class="mix-media">{media}</div>'
+
+
+def mix_cta(m: dict) -> str:
+    host = urlparse(m["url"]).netloc
+    if "youtube" in host or "youtu.be" in host:
+        return "Watch on YouTube"
+    if "soundcloud" in host:
+        return "Listen on SoundCloud"
+    return "Listen"
+
+
+def mix_card(m: dict) -> str:
     return f"""<article class="mix">
-  <div class="mix-bar" aria-hidden="true"><span></span><i>_</i><i>□</i><i>×</i></div>
-  <div class="mix-media">{media}</div>
+  {MIX_BAR}
+  {mix_media(m)}
   {mix_kind(m)}
   <h3>{e(m['title'])}</h3>
   <p class="muted">{e(m['description'])}</p>
 </article>"""
+
+
+def latest_section(c: dict) -> str:
+    # the first entry in content.json "mixes" is featured; reorder the list to change it
+    if not c["mixes"]:
+        return ""
+    m, ls = c["mixes"][0], c["latest_section"]
+    more = f'<a class="btn" href="#mixes">{e(ls["more_link"])}</a>' if len(c["mixes"]) > 1 else ""
+    return f"""<section id="latest" class="section">
+  <div class="wrap">
+    <h2>{e(ls['title'])}</h2>
+    <article class="mix mix-featured">
+      {MIX_BAR}
+      <div class="mix-featured-body">
+        {mix_media(m)}
+        <div>
+          {mix_kind(m)}
+          <h3>{e(m['title'])}</h3>
+          <p class="muted">{e(m['description'])}</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="{e(m['url'])}" target="_blank" rel="noopener">{mix_cta(m)}</a>
+            {more}
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+"""
+
+
+def mixes_section(c: dict) -> str:
+    rest = c["mixes"][1:]
+    if not rest:
+        return ""
+    return f"""<section id="mixes" class="section">
+  <div class="wrap">
+    <h2>{e(c['mixes_section']['title'])}</h2>
+    <p class="muted section-intro">{e(c['mixes_section']['intro'])}</p>
+    <div class="mix-grid">{"".join(mix_card(m) for m in rest)}</div>
+  </div>
+</section>
+"""
 
 
 def dates_list(c: dict) -> str:
@@ -223,7 +284,6 @@ def contact_block(c: dict) -> str:
 def home(c: dict) -> str:
     site, bio = c["site"], c["bio"]
     long_bio = "".join(f"<p>{e(p)}</p>" for p in bio["long"])
-    mixes = "".join(mix_card(m) for m in c["mixes"])
     return f"""{head(c, f"{site['name']} | Bookings", bio['short'], "", site['url'])}
 <body>
 {header(c, "")}
@@ -241,6 +301,7 @@ def home(c: dict) -> str:
   </div>
 </section>
 
+{latest_section(c)}
 <section id="about" class="section">
   <div class="wrap split">
     <div>
@@ -252,14 +313,7 @@ def home(c: dict) -> str:
   </div>
 </section>
 
-<section id="mixes" class="section">
-  <div class="wrap">
-    <h2>{e(c['mixes_section']['title'])}</h2>
-    <p class="muted section-intro">{e(c['mixes_section']['intro'])}</p>
-    <div class="mix-grid">{mixes}</div>
-  </div>
-</section>
-
+{mixes_section(c)}
 {played_section(c)}
 <section id="dates" class="section">
   <div class="wrap">

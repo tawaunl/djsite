@@ -99,15 +99,29 @@ body:not(.press) main > .section:nth-of-type(odd) { background: var(--bg-alt); }
 .mix { padding-top: 0; overflow: hidden; }
 .mix-bar { display: flex; align-items: center; gap: 6px; margin: 0 -16px 16px; padding: 6px 8px 6px 12px; background: linear-gradient(90deg, #0b4547, #1a8a8e); font: 700 .8rem/1.4 Tahoma, Verdana, var(--body); color: #fff; }
 .mix-bar span { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-/* classic Windows 95/98 title-bar buttons: raised gray bevel, black glyphs; close is brand gold */
-.mix-bar i { display: grid; place-items: center; width: 18px; height: 16px; flex: none; background: #d4d0c8; color: #000; font: 700 11px/1 Tahoma, Verdana, sans-serif; font-style: normal; border: 1px solid; border-color: #fff #404040 #404040 #fff; box-shadow: inset -1px -1px #808080, inset 1px 1px #dfdfdf; }
-.mix-bar i:first-of-type { align-content: end; padding-bottom: 3px; }
-.mix-bar i:last-child { margin-left: 2px; background: var(--accent-2); }
+/* classic Windows 95/98 title-bar buttons: raised gray bevel, black pixel glyphs; close is brand gold.
+   Glyphs are 16x14 pixel art (not font characters) so they line up the same on every device. */
+.mix-bar i { width: 18px; height: 16px; flex: none; background: #d4d0c8 center / 16px 14px no-repeat; border: 1px solid; border-color: #fff #404040 #404040 #fff; box-shadow: inset -1px -1px #808080, inset 1px 1px #dfdfdf; }
+.mix-bar .min { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 14' shape-rendering='crispEdges'%3E%3Cpath d='M5 9h6v2H5z'/%3E%3C/svg%3E"); }
+.mix-bar .max { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 14' shape-rendering='crispEdges'%3E%3Cpath fill-rule='evenodd' d='M4 3h9v9H4zM5 5h7v6H5z'/%3E%3C/svg%3E"); }
+.mix-bar .close { margin-left: 2px; background-color: var(--accent-2); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 14' shape-rendering='crispEdges'%3E%3Cpath d='M4 4h2v1H4zM10 4h2v1h-2zM5 5h2v1H5zM9 5h2v1H9zM6 6h4v1H6zM7 7h2v1H7zM6 8h4v1H6zM5 9h2v1H5zM9 9h2v1H9zM4 10h2v1H4zM10 10h2v1h-2z'/%3E%3C/svg%3E"); }
 .mix-media { aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; margin-bottom: 16px; background: linear-gradient(135deg, #0b2e30, #2b1811); }
 .mix-media iframe { width: 100%; height: 100%; border: 0; }
 .mix-link { display: flex; height: 100%; align-items: center; justify-content: center; gap: 12px; font-weight: 600; text-decoration: none; }
 .play { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); position: relative; }
 .play::after { content: ""; position: absolute; left: 19px; top: 15px; border-left: 14px solid var(--accent-ink); border-block: 9px solid transparent; }
+/* latest mix: one big window, video beside the details */
+.mix-featured { padding: 0 24px 24px; }
+.mix-featured .mix-bar { margin: 0 -24px 24px; }
+.mix-featured-body { display: grid; grid-template-columns: 1.7fr 1fr; gap: 32px; align-items: center; }
+.mix-featured .mix-media { margin-bottom: 0; }
+.mix-featured h3 { font-size: clamp(1.4rem, 2.6vw, 2rem); }
+.mix-featured .actions { margin-top: 20px; }
+@media (max-width: 860px) {
+  .mix-featured { padding: 0 16px 20px; }
+  .mix-featured .mix-bar { margin: 0 -16px 16px; }
+  .mix-featured-body { grid-template-columns: 1fr; gap: 20px; }
+}
 
 /* venues + quotes */
 .venues { list-style: none; padding: 0; margin: 0 0 48px; display: flex; flex-wrap: wrap; gap: 12px 32px; }

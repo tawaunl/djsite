@@ -1,5 +1,5 @@
 {
-  "_readme": "All site copy lives here. Edit this file, then run ./build.py. Anything marked TODO is a placeholder. Empty venues/testimonials lists hide the 'Played at' section.",
+  "_readme": "All site copy lives here. Edit this file, then run ./build.py. Anything marked TODO is a placeholder. Empty venues/testimonials lists hide the 'Played at' section. The first entry in mixes is featured as the Latest mix; the rest show under Mixes & Flips.",
 
   "site": {
     "name": "TWON",
@@ -59,12 +59,24 @@
 
   "genres": ["House", "Hip Hop", "Tech House", "R&B", "Afro House", "West Coast"],
 
+  "latest_section": {
+    "title": "Latest mix",
+    "more_link": "More mixes & flips"
+  },
+
   "mixes_section": {
     "title": "Mixes & Flips",
     "intro": "Full sets, plus my own remixes, edits, and flips."
   },
 
   "mixes": [
+    {
+      "title": "Sunday Night Afro House",
+      "kind": "Mix",
+      "description": "Afro house to fight off the Sunday scaries. 17 tracks in 35 minutes, from Chaka Khan to Nate Dogg.",
+      "embed": "https://www.youtube-nocookie.com/embed/3cpr2w0ZcLg",
+      "url": "https://www.youtube.com/watch?v=3cpr2w0ZcLg"
+    },
     {
       "title": "House Every Weekend (TWON x BRWDY Edit)",
       "kind": "Edit",
